@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net6.0-windows;net7.0-windows;net8.0-windows;net9.0-windows;</TargetFrameworks>
@@ -7,13 +7,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
 
     <!-- NuGet 패키지 정보 -->
-    <PackageId>LinqUI.WPF</PackageId>
-    <Version>1.0.1</Version>
+    <PackageId>LinqUI.WPF.HotReload</PackageId>
+    <Version>1.0.0</Version>
     <Authors>lukewire, rainylens</Authors>
     <Description></Description>
     <PackageTags>LinqUI;LinqUI.WPF;</PackageTags>
     <PackageProjectUrl>https://github.com/XAMLBaker/LinqUI</PackageProjectUrl>
-    
+
     <!-- XML 문서 포함 -->
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <!-- 심볼 패키지 포함 -->
