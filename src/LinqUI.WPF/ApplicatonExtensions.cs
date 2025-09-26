@@ -1,4 +1,6 @@
-﻿using System.Windows.Navigation;
+﻿using System.Runtime.CompilerServices;
+using System.Windows.Navigation;
+using System.Windows.Threading;
 
 namespace LinqUI.WPF
 {
@@ -79,6 +81,12 @@ namespace LinqUI.WPF
         {
             application.Startup += handler;
 
+            return application;
+        }
+
+        public static T DispatcherUnhandledException<T>(this T application, DispatcherUnhandledExceptionEventHandler handler) where T : Application
+        {
+            application.DispatcherUnhandledException += handler;
             return application;
         }
     }
