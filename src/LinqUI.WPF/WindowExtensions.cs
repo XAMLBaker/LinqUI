@@ -2,7 +2,7 @@
 
 namespace LinqUI.WPF
 {
-    public static class WindowExtensions
+    public static partial class WindowExtensions
     {
         public static T AllowsTransparencyProperty<T>(this T window, bool allowsTransparency) where T : Window
         {
