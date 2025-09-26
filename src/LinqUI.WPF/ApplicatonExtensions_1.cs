@@ -83,7 +83,7 @@ namespace LinqUI.WPF
             return application;
         }
 
-        public static T DispatcherUnhandledException<T>(this T application, DispatcherUnhandledExceptionEventHandler handler) where T : Application
+        public static T OnDispatcherUnhandledException<T>(this T application, DispatcherUnhandledExceptionEventHandler handler) where T : Application
         {
             application.DispatcherUnhandledException += handler;
             return application;
