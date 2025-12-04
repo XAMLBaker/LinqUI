@@ -3,7 +3,6 @@ using CommunityToolkit.Mvvm.Input;
 using LinqUI.WPF;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 namespace Test
 {
     internal class Program
@@ -31,15 +30,15 @@ namespace Test
                                             .FontSize (24)
                                             .Margin (8)
                                             .HCenter ()
-                                            .Bind (TextBlock.TextProperty, new Binding (nameof (CounterViewModel.Count))),
+                                            .Bind (tb => tb.Text, static (CounterViewModel vm) => vm.Count),
                                         new Button ()
                                             .Content ("Increment (+1)")
                                             .Margin (8)
-                                            .Bind (Button.CommandProperty, new Binding (nameof (CounterViewModel.IncrementCountCommand))),
+                                            .BindCommand (btn => btn.Command, static (CounterViewModel vm) => vm.IncrementCountCommand),
                                         new Button ()
                                             .Content ("Decrement (-1)")
                                             .Margin (8)
-                                            .Bind (Button.CommandProperty, new Binding (nameof (CounterViewModel.DecrementCountCommand)))
+                                            .BindCommand (btn => btn.Command, static (CounterViewModel vm) => vm.DecrementCountCommand)
                                     )
                             )
                     );
@@ -50,7 +49,6 @@ namespace Test
     {
 
     }
-    public partial class MainWindow : Window { }
 
     public sealed partial class CounterViewModel : ObservableObject
     {
