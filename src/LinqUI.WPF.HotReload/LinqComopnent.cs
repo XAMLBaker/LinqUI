@@ -1,7 +1,5 @@
-﻿using System.Linq.Expressions;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 
 namespace LinqUI.WPF.HotReload;
 public abstract class LinqComponent : ContentControl, IRender
@@ -32,24 +30,6 @@ public abstract class LinqComponent : ContentControl, IRender
     public abstract FrameworkElement Build();
 }
 
-public abstract class LinqComponent<TViewModel> : ContentControl
+public abstract class LinqComponent<TViewModel> : LinqComponent
 {
-    private bool _initialized;
-
-    public LinqComponent()
-    {
-        DataContextChanged += (_, __) => TryRender ();
-        Loaded += (_, __) => TryRender ();
-    }
-
-    private void TryRender()
-    {
-        if (DataContext is TViewModel vm)
-        {
-            _initialized = true;
-            Content = Build ();
-        }
-    }
-
-    public abstract FrameworkElement Build();
 }

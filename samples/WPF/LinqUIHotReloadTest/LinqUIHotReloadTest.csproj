@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\LinqUI.WPF.HotReload\LinqUI.WPF.HotReload.csproj" />
-    <ProjectReference Include="..\src\LinqUI.WPF\LinqUI.WPF.csproj" />
+    <ProjectReference Include="..\..\..\src\LinqUI.WPF.HotReload\LinqUI.WPF.HotReload.csproj" />
+    <ProjectReference Include="..\..\..\src\LinqUI.WPF\LinqUI.WPF.csproj" />
   </ItemGroup>
 
 </Project>
